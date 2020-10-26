@@ -2,6 +2,7 @@
 // https://github.com/tmijs/tmi.js#tmijs
 const tmi = require("tmi.js");
 const config = require("./config.js");
+const keys = require("./key.conf.js");
 
 
 // setup client
