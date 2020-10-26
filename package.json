@@ -1,0 +1,23 @@
+{
+  "name": "tweetiepie",
+  "version": "1.0.0",
+  "description": "Twitch chat to twitter tweet bot",
+  "main": "tweetiepie.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NerdStoke/tweetiepi.git"
+  },
+  "author": "NerdStoke (Thomas Cannon)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NerdStoke/tweetiepi/issues"
+  },
+  "homepage": "https://github.com/NerdStoke/tweetiepi#readme",
+  "dependencies": {
+    "tmi": "^2.0.0",
+    "tmi.js": "^1.5.0"
+  }
+}
