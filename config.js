@@ -6,5 +6,5 @@ module.exports = {
   channel,
 
   // Delay between each user can send a tweet
-  timeToWait: 10000,
+  timeToWait: 86400000,
 };
