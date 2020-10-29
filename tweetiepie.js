@@ -53,10 +53,10 @@ twitch_client.on("message", function aggCommands(channel, tags, message, self) {
       }
       if (messageMatches[1] == '!tweettime') {
         if (users[user]['last_tweet'] == undefined) {
-          twitch_client.say(keys.twitch_channel_name, `@${user}, you can tweet now`);
+          twitch_client.say(keys.twitch_channel_name, `@${user}, you can tweet now.`);
         } else {
           time_remaining = time_conversion(config.timeToWait - (new Date().getTime() - users[user]['last_tweet']));
-          twitch_client.say(keys.twitch_channel_name, `@${user}, you can tweet again in ${time_remaining}`);
+          twitch_client.say(keys.twitch_channel_name, `@${user}, you can tweet again in ${time_remaining}.`);
         }
       }
       if (can_tweet) { 
@@ -66,7 +66,7 @@ twitch_client.on("message", function aggCommands(channel, tags, message, self) {
         }
         else if (users[user]['tweet'] != null && messageMatches[1] == '!yes') {
           twitter_client.post('statuses/update', {status: users[user]['tweet']});
-          twitch_client.say(keys.twitch_channel_name, `@${user}, your tweet was sent to @Nerdstoke's twitter, you can tweet again in 24 hours`);
+          twitch_client.say(keys.twitch_channel_name, `@${user}, your tweet was sent to @Nerdstoke's twitter. You can tweet again in 24 hours.`);
           users[user]['last_tweet'] = new Date().getTime();
           delete users[user]['tweet'];
         }
@@ -80,14 +80,14 @@ twitch_client.on("message", function aggCommands(channel, tags, message, self) {
 
 
 function confirm_tweet(tweet, user){
-  var confirmation = `@${user}, confirm tweet: "${tweet}" to be sent to @NerdStoke twitter account. !yes to confirm, !no to cancel.`;
+  var confirmation = `@${user}, confirm tweet: "${tweet}" to be sent to @NerdStoke twitter account. !yes to confirm; !no to cancel.`;
   twitch_client.say(keys.twitch_channel_name, confirmation);
 };
 
 
 function cancel_tweet(tweet, user){
   delete users[user]['tweet'];
-  var cancellation = `@${user}, you tweet was cancelled`;
+  var cancellation = `@${user}, your tweet was cancelled.`;
   twitch_client.say(keys.twitch_channel_name, cancellation);
 };
 
