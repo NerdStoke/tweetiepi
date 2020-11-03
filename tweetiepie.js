@@ -64,7 +64,7 @@ twitch_client.on("message", function aggCommands(channel, tags, message, self) {
         }
       }
       if (can_tweet) { 
-        if (messageMatches[1] == '!tweet: ') {
+        if (messageMatches[1] == '!tweet ') {
           users[user]['tweet'] = `Twitch user ${user} says: ${messageMatches[2]}`;
           confirm_tweet(users[user]['tweet'],user);
         }
