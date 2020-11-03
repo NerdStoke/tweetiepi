@@ -56,7 +56,11 @@ twitch_client.on("message", function aggCommands(channel, tags, message, self) {
           twitch_client.say(keys.twitch_channel_name, `@${user}, you can tweet now.`);
         } else {
           time_remaining = time_conversion(config.timeToWait - (new Date().getTime() - users[user]['last_tweet']));
-          twitch_client.say(keys.twitch_channel_name, `@${user}, you can tweet again in ${time_remaining}.`);
+          if (time_remaining <= 0) {
+            twitch_client.say(keys.twitch_channel_name, `@${user}, you can tweet now.`);
+          } else {
+            twitch_client.say(keys.twitch_channel_name, `@${user}, you can tweet again in ${time_remaining}.`);
+          }
         }
       }
       if (can_tweet) { 
