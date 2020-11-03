@@ -39,7 +39,7 @@ twitch_client.on("message", function aggCommands(channel, tags, message, self) {
   let can_tweet = true
   if (user.toLowerCase() != "streamelements") {
     let isCorrectChannel = `#${config.channel}` === channel;
-    let messageMatches = message.match(/(^\!tweet\:\s)(.*)/) || message.match(/^(\!yes|\!no)$/) || message.match(/^(\!tweettime)$/);
+    let messageMatches = message.match(/(^\!tweet\s)(.*)/) || message.match(/^(\!yes|\!no)$/) || message.match(/^(\!tweettime)$/);
     if (self) {return;}
     if (isCorrectChannel && messageMatches != null) {
       if (users[user] == undefined) {
